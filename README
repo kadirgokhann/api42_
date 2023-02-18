@@ -1,6 +1,13 @@
 -> First run this python command to install all the dependencies
    pip3 install -r requirements.txt
 
+-> Then, in order to use the advantage of this module you need to use Python Intellisense
+   in your VSCode. For that you need to install the following package:
+   
+   https://code.visualstudio.com/download
+   https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
+
 -> You just need to create a file : ./src/credentials/keys.json
    Example of that file exists there. You just need to replace the api secret and api key with your own 
    and correct the name of that file.
