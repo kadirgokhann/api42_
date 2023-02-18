@@ -1,0 +1,30 @@
+18/02/2023 00:47:40 : Requesting: get:/v2/users/kgokhan  Parametres:{}
+18/02/2023 00:48:11 : Requesting: get:/v2/users/kgokhan  Parametres:{}
+18/02/2023 00:48:43 : Requesting: get:/v2/users/kgokhan  Parametres:{}
+18/02/2023 00:49:57 : Requesting: get:/v2/users/kgokhan  Parametres:{}
+18/02/2023 00:50:17 : Requesting: get:/v2/users/kgokhan  Parametres:{}
+18/02/2023 00:51:13 : Requesting: get:/v2/users/kgokhan  Parametres:{}
+18/02/2023 00:51:32 : Requesting: get:/v2/users/kgokhan  Parametres:{}
+18/02/2023 00:52:01 : Requesting: get:/v2/users/  Parametres:{'filter[primary_campus_id]': 49}
+18/02/2023 00:52:35 : Requesting: get:/v2/users/  Parametres:{'filter[primary_campus_id]': 49}
+18/02/2023 00:52:57 : Requesting: get:/v2/users/  Parametres:{'filter[primary_campus_id]': 49}
+18/02/2023 00:53:11 : Requesting: get:/v2/users/  Parametres:{'filter[primary_campus_id]': 49}
+18/02/2023 00:53:26 : Requesting: get:/v2/users/  Parametres:{'filter[primary_campus_id]': 49}
+18/02/2023 00:55:17 : Requesting: get:/v2/users/  Parametres:{'filter[primary_campus_id]': 49}
+18/02/2023 01:25:01 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 270}
+18/02/2023 01:25:16 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 270}
+18/02/2023 01:25:27 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 270}
+18/02/2023 01:26:43 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 270}
+18/02/2023 01:26:54 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 270}
+18/02/2023 01:27:20 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 270}
+18/02/2023 01:27:59 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 270}
+18/02/2023 01:28:09 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 01:28:42 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 09:46:12 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 09:53:21 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 09:53:42 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 09:57:24 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 09:57:31 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 10:07:18 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 10:07:28 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}
+18/02/2023 10:14:06 : Requesting: get:/v2/accreditations  Parametres:{'filter[id]': 278}

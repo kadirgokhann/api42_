@@ -1,0 +1,35 @@
+-> You just need to create a file : ./src/credentials/keys.json
+   Example of that file exists there. You just need to replace the api secret and api key with your own 
+   and correct the name of that file.
+   
+   If you want to use API on the campus_id 49
+    {
+        "_49_api_key": "xxxxxx",
+        "_49_api_secret": "xxx",
+        "_49_token": "xxxxxx",
+        "_49_tokentime": "23/02/18 09:57:23"
+    }
+
+    and in the code you can create object like this:
+    $api = API(49);
+
+    ------------------------------------------------------------------------
+    If you want to use API on two campus_id:
+
+    You need to create a file ./src/credentials/keys.json like
+    {
+        "_49_api_key": "xxxxxx",
+        "_49_api_secret": "xxx",
+        "_49_token": "xxxxxx",
+        "_49_tokentime": "23/02/18 09:57:23",
+        "_50_api_key": "xxxxxx",
+        "_50_api_secret": "xxx",
+        "_50_token": "xxxxxx",
+        "_50_tokentime": "23/02/18 09:57:23"
+    }   
+
+    You can create object like this:
+    $api = API(49); 
+    $api2 = API(50);
+
+
