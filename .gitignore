@@ -1,3 +1,4 @@
 src/credentials/keys.json
 fetched_data/*.json
 logs.txt
+.DS_Store
