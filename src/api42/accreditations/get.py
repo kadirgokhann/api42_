@@ -23,11 +23,12 @@ def get_accreditations(self, id: int = None, name: str = None, user_id: int = No
     Examples
     --------
     >>> >> api =API(49)
-    >>> >> name = api.get_accreditations(id=2).name
+    >>> >> name = api.get_accreditations(id=2)[0].name
     >>> >> s=api.get_accreditations(sırt="user_id")
     [
         ACCREDITATIONS(cursus_id=1, difficulty=1, id=2, name="Piscine C", user_id=1, validated=True),
         ACCREDITATIONS(cursus_id=1, difficulty=1, id=3, name="Piscine C", user_id=1, validated=True),
+        ...
     ]
     >>> >> s[0].cursus_id
     1
