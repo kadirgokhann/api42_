@@ -1,9 +1,13 @@
+This module needs 7 core. If you have more than 7 core, its okay. If not,
+you need to change the number of core in the file ./src/api2/request.py line 68.
+
+
 -> First run this python command to install all the dependencies
    pip3 install -r requirements.txt
 
 -> Then, in order to use the advantage of this module you need to use Python Intellisense
    in your VSCode. For that you need to install the following package:
-   
+
    https://code.visualstudio.com/download
    https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
