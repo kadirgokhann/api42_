@@ -19,7 +19,5 @@ from docx import Document
 from threading import Thread
 from dateutil.relativedelta import relativedelta
 from git import Repo
-import json
 from types import SimpleNamespace
-import os
 import src.api42.config as cfg
