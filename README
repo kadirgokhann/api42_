@@ -28,7 +28,7 @@ you need to change the number of core in the file ./src/api2/request.py line 68.
     $api = API(49);
 
     ------------------------------------------------------------------------
-    If you want to use API on two campus_id:
+    If you want to use API on two campus_ids:
 
     You need to create a file ./src/credentials/keys.json like
     {
