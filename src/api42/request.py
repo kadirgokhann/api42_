@@ -60,7 +60,7 @@ def request(self, type: str = "get", adress: str = "", params: str = {}) -> Resp
     self.adress = adress
     with open(str(self.dir_path)+"/logs.txt", "a") as a:
         now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        a.write(now + " : Requesting: "+type+":"+str(adress)+"  "+"Parametres:"+str(params) + "\n")
+        a.write(now + " : Requesting: "+type+":"+str(adress)+"  "*(30-len(str(adress)))+"Parametres:"+str(params) + "\n")
     # Request the first page
     response = self._request(type, adress, params)
     data_size = response.headers["X-Total"] if "x-Total" in response.headers else 0
