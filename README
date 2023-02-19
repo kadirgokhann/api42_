@@ -1,28 +1,29 @@
-This module needs 7 core. If you have more than 7 core, its okay. If not,
+-> a) This module needs 7 core. If you have more than 7 core, its okay. If not,
 you need to change the number of core in the file ./src/api2/request.py line 68.
-
+b) 7 is for Certified App.
+4 is for Official App.
+1 is for Default App.
 
 -> First run this python command to install all the dependencies
-   pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 
 -> Then, in order to use the advantage of this module you need to use Python Intellisense
-   in your VSCode. For that you need to install the following package:
+in your VSCode. For that you need to install the following package:
 
-   https://code.visualstudio.com/download
-   https://marketplace.visualstudio.com/items?itemName=ms-python.python
-
+https://code.visualstudio.com/download
+https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
 -> You just need to create a file : ./src/credentials/keys.json
-   Example of that file exists there. You just need to replace the api secret and api key with your own 
-   and correct the name of that file.
-   
-   If you want to use API on the campus_id 49
-    {
-        "_49_api_key": "xxxxxx",
-        "_49_api_secret": "xxx",
-        "_49_token": "xxxxxx",
-        "_49_tokentime": "23/02/18 09:57:23"
-    }
+Example of that file exists there. You just need to replace the api secret and api key with your own
+and correct the name of that file.
+
+If you want to use API on the campus_id 49
+{
+"\_49_api_key": "xxxxxx",
+"\_49_api_secret": "xxx",
+"\_49_token": "xxxxxx",
+"\_49_tokentime": "23/02/18 09:57:23"
+}
 
     and in the code you can create object like this:
     $api = API(49);
@@ -40,8 +41,8 @@ you need to change the number of core in the file ./src/api2/request.py line 68.
         "_50_api_secret": "xxx",
         "_50_token": "xxxxxx",
         "_50_tokentime": "23/02/18 09:57:23"
-    }   
+    }
 
     You can create object like this:
-    $api = API(49); 
+    $api = API(49);
     $api2 = API(50);
