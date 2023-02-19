@@ -29,3 +29,7 @@ def getUri():
 
 def getEndpoint():
     return json.load(open(settings_path, "r"))["endpoint"]
+
+
+def getThreads():
+    return json.load(open(settings_path, "r"))["threads"]
