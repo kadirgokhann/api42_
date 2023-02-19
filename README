@@ -1,7 +1,7 @@
 -> a) This module needs 7 core. If you have more than 7 core, its okay. If not,
 you need to change the number of core in the file ./src/api2/request.py line 68.
 b) 7 is for Certified App.
-4 is for Official App.
+3 is for Official App.
 1 is for Default App.
 
 -> First run this python command to install all the dependencies
