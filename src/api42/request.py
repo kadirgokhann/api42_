@@ -65,7 +65,7 @@ def request(self, type: str = "get", adress: str = "", params: str = {}) -> tupl
     response = self._request(type, adress, params)
     data_size = response.headers["X-Total"] if "x-Total" in response.headers else 0
     numofPages = math.ceil(int(data_size)/100)
-    thread_num = 7
+    thread_num = int(cfg.getThreads())
     work = math.ceil(int(numofPages)/int(thread_num))
     # If page property does not exist call the embedded request function. Params should be updated.
     if (not "x-Page" in response.headers) or (int(response.headers["X-Total"]) <= 30) or (("page[number]" in params) or ("page[size]" in params)) or (type == "post") or (type == "put") or (type == "delete"):
