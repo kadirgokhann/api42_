@@ -1,17 +1,6 @@
 from src.api42.all_moduls import *
 
 
-class Response:
-    def __init__(self, response):
-        self.response = response
-        self.status_code = response.status_code
-        self.headers = response.headers
-        self.content = response.content
-        self.text = response.text
-        self.json = response.json()
-        self.headers = response.headers
-
-
 class API42:
     "This is the doc"
 
