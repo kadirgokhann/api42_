@@ -9,7 +9,6 @@ class Response:
         self.content = response.content
         self.text = response.text
         self.json = response.json()
-        self.headers = response.headers
 
 
 def _request(self, type, adress, params):
@@ -57,7 +56,7 @@ def _response(self, response, whole_response: list = [], key=0):
         return False
 
 
-def request(self, type: str = "get", adress: str = "", params: str = {}) -> tuple:
+def request(self, type: str = "get", adress: str = "", params: str = {}) -> Response:
     self.adress = adress
     with open(str(self.dir_path)+"/logs.txt", "a") as a:
         now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
@@ -81,7 +80,7 @@ def request(self, type: str = "get", adress: str = "", params: str = {}) -> tupl
     max = current_page+work-1
     print("--> Total Work: "+str(num_of_pages), ", Work on a thread: "+str(work), ", Total Thread: ", str(num_of_thread))
     while current_page <= num_of_pages and max <= num_of_pages:
-        threads.append(CustomThread(adress=adress, current_page=current_page, max=max, parametre=params, id=id, campus_id=self.campus_id))
+        threads.append(self.Thread_Class(adress=adress, current_page=current_page, max=max, parametre=params, id=id, campus_id=self.campus_id))
         current_page += work
         max = current_page+work-1
         if max > num_of_pages:
@@ -96,7 +95,7 @@ def request(self, type: str = "get", adress: str = "", params: str = {}) -> tupl
             alldata.append(i)
     # Since we are using threads, we need to collect the data and create a response class with
     # the data we collected. We also need to write the data to a json file.
-    self.__write_json(data=alldata)
+    self._write_json(data=alldata)
     r = Response(response)
     r.json = alldata
     return r

@@ -36,7 +36,7 @@ def get_accreditations(self, id: int = None, name: str = None, user_id: int = No
     """
     key, value = None, None
     if range != None:
-        key, value = self.__range_to_kv(range)
+        key, value = self._range_to_kv(range)
         if value == None:
             raise Exception("get_accreditations:"+key)
     _params = {"filter[id]": id, "filter[name]": name, "filter[user_id]": user_id, "filter[cursus_id]": cursus_id,
