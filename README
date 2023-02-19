@@ -1,6 +1,7 @@
--> a) This module needs 7 core. If you have more than 7 core, its okay. If not,
-you need to change the number of core in the file ./src/api2/request.py line 68.
-b) 7 is for Certified App.
+-> In the src/credentials/settings.json, there is a key called "token".
+It represents the number of requests in a second, but be carefull if you write
+7, it requires you have more core then 6.
+7 is for Certified App.
 3 is for Official App.
 1 is for Default App.
 
