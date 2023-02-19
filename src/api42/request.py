@@ -3,12 +3,15 @@ from src.api42.all_moduls import *
 
 class Response:
     def __init__(self, response):
-        self.response = response
-        self.status_code = response.status_code
-        self.headers = response.headers
-        self.content = response.content
-        self.text = response.text
-        self.json = response.json()
+        self.response: object = response
+        self.status_code: int = response.status_code
+        self.headers: dict = dict(response.headers)
+        self.content: bytes = response.content
+        self.text: str = response.text
+        self.json: json = response.json()
+
+    def __str__(self):
+        return json.dumps(self.json, indent=4)
 
 
 def _request(self, type, adress, params):
@@ -78,21 +81,24 @@ def request(self, type: str = "get", adress: str = "", params: str = {}) -> Resp
         params["page[size]"] = str(100)
     current_page, alldata, threads, id = 1, [], [], 0
     max = current_page+work-1
-    print("--> Total Work: "+str(num_of_pages), ", Work on a thread: "+str(work), ", Total Thread: ", str(num_of_thread))
+    print("-------> Total Work: "+str(num_of_pages), ", Work on a thread: "+str(work), ", Total Thread: ", str(num_of_thread))
     while current_page <= num_of_pages and max <= num_of_pages:
-        threads.append(self.Thread_Class(adress=adress, current_page=current_page, max=max, parametre=params, id=id, campus_id=self.campus_id))
+        a_th = self.Thread_Class(adress=adress, current_page=current_page, max=max, parametre=params, id=id, campus_id=self.campus_id)
+        threads.append(a_th)
+        a_th.start()
         current_page += work
         max = current_page+work-1
         if max > num_of_pages:
             max = num_of_pages
         id += 1
-    for thread in threads:
-        thread.start()
+    # for thread in threads:
+    #    thread.start()
     for k in range(len(threads)):
         threads[k].join()
-        print("--> Thread["+str(k)+"] is done with the pages "+threads[k].pages[:-1]+".")
+        # print("--> Thread["+str(k)+"] is done with the pages "+threads[k].pages[:-1]+".")
         for i in threads[k].whole_response:
             alldata.append(i)
+    print("\n-------> All threads are done.")
     # Since we are using threads, we need to collect the data and create a response class with
     # the data we collected. We also need to write the data to a json file.
     self._write_json(data=alldata)
