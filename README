@@ -1,50 +1,50 @@
--> In the src/credentials/settings.json, there is a key called "token".
-It represents the number of requests in a second, but be carefull if you write
-7, it requires more core then 6.
-7 is for Certified App.
-3 is for Official App.
-1 is for Default App.
-You can learn the type from https://profile.intra.42.fr/oauth/applications
+      -> In the src/credentials/settings.json, there is a key called "token".
+      It represents the number of requests in a second, but be carefull if you write
+      7, it requires more core then 6.
+      7 is for Certified App.
+      3 is for Official App.
+      1 is for Default App.
+      You can learn the type from https://profile.intra.42.fr/oauth/applications
 
--> First run this python command to install all the dependencies
-pip3 install -r requirements.txt
+      -> First run this python command to install all the dependencies
+      pip3 install -r requirements.txt
 
--> Then, in order to use the advantage of this module you need to use Python Intellisense
-in your VSCode. For that you need to install the following package:
+      -> Then, in order to use the advantage of this module you need to use Python Intellisense
+      in your VSCode. For that you need to install the following package:
 
-https://code.visualstudio.com/download
-https://marketplace.visualstudio.com/items?itemName=ms-python.python
+      https://code.visualstudio.com/download
+      https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
--> You just need to create a file : ./src/credentials/keys.json
-Example of that file exists there. You just need to replace the api secret and api key with your own
-and correct the name of that file.
+      --> You just need to create a file : ./src/credentials/keys.json
+      Example of that file exists there. You just need to replace the api secret and api key with your own
+      and correct the name of that file.
 
-If you want to use API on the campus_id 49
-{
-"\_49_api_key": "xxxxxx",
-"\_49_api_secret": "xxx",
-"\_49_token": "xxxxxx",
-"\_49_tokentime": "23/02/18 09:57:23"
-}
+      If you want to use API on the campus_id 49
+      {
+            "_49_api_key": "xxxxxx",
+            "_49_api_secret": "xxx",
+            "_49_token": "xxxxxx",
+            "_49_tokentime": "23/02/18 09:57:23"
+      }
 
-    and in the code you can create object like this:
-    $api = API(49);
+      and in the code you can create object like this:
+      $api = API(49);
 
-    ------------------------------------------------------------------------
-    If you want to use API on two campus_ids:
+      ------------------------------------------------------------------------
+      If you want to use API on two campus_ids:
 
-    You need to create a file ./src/credentials/keys.json like
-    {
-        "_49_api_key": "xxxxxx",
-        "_49_api_secret": "xxx",
-        "_49_token": "xxxxxx",
-        "_49_tokentime": "23/02/18 09:57:23",
-        "_50_api_key": "xxxxxx",
-        "_50_api_secret": "xxx",
-        "_50_token": "xxxxxx",
-        "_50_tokentime": "23/02/18 09:57:23"
-    }
+      You need to create a file ./src/credentials/keys.json like
+      {
+         "_49_api_key": "xxxxxx",
+         "_49_api_secret": "xxx",
+         "_49_token": "xxxxxx",
+         "_49_tokentime": "23/02/18 09:57:23",
+         "_50_api_key": "xxxxxx",
+         "_50_api_secret": "xxx",
+         "_50_token": "xxxxxx",
+         "_50_tokentime": "23/02/18 09:57:23"
+      }
 
-    You can create object like this:
-    $api = API(49);
-    $api2 = API(50);
+      You can create object like this:
+      $api = API(49);
+      $api2 = API(50);
