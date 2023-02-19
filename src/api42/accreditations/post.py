@@ -34,7 +34,7 @@ def post_accreditations(self, name: str = None, user_id: int = None, cursus_id: 
         if v == None:
             continue
         params[k] = v
-    #########################
+    ############################
     response = self.request("post", "/v2/accreditations", params=params)
     ############################
     return [ACCREDITATIONS(**response.json)]
