@@ -1,46 +1,6 @@
 from src.api42.all_moduls import *
 
 
-class Response:
-    def __init__(self, response):
-        self.response = response
-        self.status_code = response.status_code
-        self.headers = response.headers
-        self.content = response.content
-        self.text = response.text
-        self.json = response.json()
-        self.headers = response.headers
-
-
-class CustomThread(Thread):
-    def __init__(self, adress, current_page, max, parametre, id, campus_id):
-        Thread._init_(self)
-        self.id = id
-        self.current_page = current_page
-        self.max = max
-        self.adress = adress
-        self.params = parametre
-        self.campus = campus_id
-        self.api = API42(campus_id)
-        self.whole_response = []
-        self.pages = ""
-
-    def run(self):
-        params = dict()
-        while self.current_page <= self.max:
-            self.pages += str(self.current_page)+","
-            params.update(self.params)
-            params.update({"page[number]": self.current_page})
-            # print(f"get: {self.adress} {params}")
-            response = self.api._request(type="get", adress=self.adress, params=params)
-            time.sleep(1)
-            # response = self.api._request(type="get", adress=self.adress, params={'filter[primary_campus_id]': 49, 'page[size]': '100', 'page[number]': self.current_page})
-
-            self.whole_response = self.api._response(response=response, whole_response=self.whole_response, key=1)
-            # print("Thread["+str(self.id)+"], "+str(self.current_page)+" is done.")
-            self.current_page += 1
-
-
 class API42:
     "This is the doc"
 
@@ -78,6 +38,40 @@ class API42:
             return self.token
         else:
             return cfg.getToken(self.campus_id)
+
+    class Thread_Class(Thread):
+        def __init__(self, adress, current_page, max, parametre, id, campus_id):
+            Thread.__init__(self)
+            self.id = id
+            self.current_page = current_page
+            self.max = max
+            self.adress = adress
+            self.params = parametre
+            self.campus = campus_id
+            self.api = API42(campus_id)
+            self.whole_response = []
+            self.pages = ""
+
+        def run(self):
+            params = dict()
+            with tqdm(total=self.max-self.current_page+1) as pbar:
+                pbar.set_description("Thread "+(" "if self.id < 10 else "")+str(self.id))
+                #pbar.colour = "green"
+                pbar.smoothing = 0.1
+
+                while self.current_page <= self.max:
+                    self.pages += str(self.current_page)+","
+                    params.update(self.params)
+                    params.update({"page[number]": self.current_page})
+                    # print(f"get: {self.adress} {params}")
+                    response = self.api._request(type="get", adress=self.adress, params=params)
+                    time.sleep(1)
+                    # response = self.api._request(type="get", adress=self.adress, params={'filter[primary_campus_id]': 49, 'page[size]': '100', 'page[number]': self.current_page})
+
+                    self.whole_response = self.api._response(response=response, whole_response=self.whole_response, key=1)
+                    # print("Thread["+str(self.id)+"], "+str(self.current_page)+" is done.")
+                    self.current_page += 1
+                    pbar.update(1)
 
     from src.api42.request import (
         _request,

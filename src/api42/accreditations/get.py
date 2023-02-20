@@ -18,7 +18,7 @@ class ACCREDITATIONS():
 
 
 def get_accreditations(self, id: int = None, name: str = None, user_id: int = None, cursus_id: int = None, difficulty: int = None, validated: bool = None, created_at: "2022-01-03T06:42:00.000Z" = None, updated_at: "2022-01-03T06:42:00.000Z" = None,
-                       sort: "user_id,-id" = None, range: "created_at=min,max" = None) -> [ACCREDITATIONS]:
+                       sort: "user_id,-id" = None, range: "created_at=min,max" = None) -> List[ACCREDITATIONS]:
     """
     Examples
     --------
@@ -36,7 +36,7 @@ def get_accreditations(self, id: int = None, name: str = None, user_id: int = No
     """
     key, value = None, None
     if range != None:
-        key, value = self.__range_to_kv(range)
+        key, value = self._range_to_kv(range)
         if value == None:
             raise Exception("get_accreditations:"+key)
     _params = {"filter[id]": id, "filter[name]": name, "filter[user_id]": user_id, "filter[cursus_id]": cursus_id,

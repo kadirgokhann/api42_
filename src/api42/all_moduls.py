@@ -1,5 +1,5 @@
 
-from typing import Literal, Type
+from typing import Literal, Type, List
 import os
 import re
 import math
@@ -14,10 +14,7 @@ import random
 from types import SimpleNamespace
 from time import strptime, mktime
 from datetime import datetime, timedelta, date, timezone
-from bunch import bunchify
-from docx import Document
 from threading import Thread
-from dateutil.relativedelta import relativedelta
-from git import Repo
 from types import SimpleNamespace
 import src.api42.config as cfg
+from tqdm import tqdm

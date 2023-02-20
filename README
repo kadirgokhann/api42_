@@ -1,9 +1,9 @@
       -> In the src/credentials/settings.json, there is a key called "token".
-      It represents the number of requests in a second, but be carefull if you write
-      7, it requires more core then 6.
+      It represents the number of requests in a second.
       7 is for Certified App.
       3 is for Official App.
       1 is for Default App.
+
       You can learn the type from https://profile.intra.42.fr/oauth/applications
 
       -> First run this python command to install all the dependencies
