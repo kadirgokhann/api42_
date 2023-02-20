@@ -60,6 +60,8 @@ def _response(self, response, whole_response: list = [], key=0):
 
 
 def request(self, type: str = "get", adress: str = "", params: str = {}) -> Response:
+    type = type.lower()
+    adress = adress.lower()
     self.adress = adress
     with open(str(self.dir_path)+"/logs.txt", "a") as a:
         now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
