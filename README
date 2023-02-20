@@ -9,6 +9,10 @@
       -> First run this python command to install all the dependencies
       pip3 install -r requirements.txt
 
+
+      -> You need to disable PyLance.
+
+
       -> Then, in order to use the advantage of this module you need to use Python Intellisense
       in your VSCode. For that you need to install the following package:
 
